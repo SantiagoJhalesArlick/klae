@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justine Claire Francia | Digital Card</title>
+    <!-- Tailwind CSS for clean utility styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        lavender: {
+                            50: '#FAF8FF',
+                            100: '#F3EEFF',
+                            200: '#E5DBFF',
+                            300: '#D0BFFF',
+                            400: '#B197FC',
+                            500: '#9775FA',
+                        },
+                        royal: {
+                            600: '#7048E8',
+                            700: '#5F3DC4',
+                            800: '#4C2889',
+                            900: '#2E1065',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Subtle animated equalizer bars for favorite song widget */
+        @keyframes eq-bounce {
+            0%, 100% { height: 4px; }
+            50% { height: 14px; }
+        }
+        .eq-bar-1 { animation: eq-bounce 0.9s ease-in-out infinite; }
+        .eq-bar-2 { animation: eq-bounce 0.65s ease-in-out infinite 0.2s; }
+        .eq-bar-3 { animation: eq-bounce 0.8s ease-in-out infinite 0.4s; }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-white via-lavender-50 to-lavender-100 text-slate-800 antialiased selection:bg-lavender-200 selection:text-royal-900 flex flex-col items-center justify-center p-4 sm:p-6 relative overflow-x-hidden">
+
+    <!-- Subtle Decorative Background Orbs -->
+    <div class="fixed -top-24 -right-24 w-72 h-72 bg-lavender-300/30 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="fixed -bottom-24 -left-24 w-80 h-80 bg-royal-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <!-- Main Digital Card Container -->
+    <main class="w-full max-w-md bg-white/85 backdrop-blur-xl border border-lavender-200/80 rounded-3xl shadow-[0_20px_50px_rgba(112,72,232,0.10)] overflow-hidden transition-all duration-300 relative z-10">
+        
+        <!-- Top Aesthetic Purple Header Banner -->
+        <div class="h-28 bg-gradient-to-r from-royal-800 via-royal-600 to-lavender-500 relative">
+            <!-- Subtle geometric pattern overlay -->
+            <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:14px_14px]"></div>
+            
+            <!-- NFC Badge Pill -->
+            <div class="absolute top-3.5 right-3.5 bg-white/20 backdrop-blur-md border border-white/30 text-white text-[11px] font-medium px-2.5 py-1 rounded-full flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 8.32a7.43 7.43 0 0 1 0 7.36"/>
+                    <path d="M9.46 6.21a11.76 11.76 0 0 1 0 11.58"/>
+                    <path d="M12.91 4.1a15.91 15.91 0 0 1 .01 15.8"/>
+                    <path d="M16.37 2a20.16 20.16 0 0 1 0 20"/>
+                </svg>
+                <span>byjs</span>
+            </div>
+        </div>
+
+        <!-- Profile Content Wrapper -->
+        <div class="px-6 pb-7 pt-0 text-center">
+            
+            <!-- Profile Picture Avatar with Graceful Fallback to JCF Monogram -->
+            <div class="relative -mt-14 mb-4 inline-block">
+                <div class="w-28 h-28 rounded-full p-1.5 bg-white shadow-lg shadow-royal-900/15 mx-auto">
+                    <div class="w-full h-full rounded-full bg-gradient-to-br from-lavender-100 via-lavender-200 to-lavender-300 border-2 border-royal-600/30 overflow-hidden flex items-center justify-center relative">
+                        <img 
+                            src="klae.png" 
+                            alt="Justine Claire Francia" 
+                            class="w-full h-full object-cover"
+                            onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                        >
+                        <span class="hidden font-display font-extrabold text-3xl tracking-tight text-royal-800 select-none">
+                            JCF
+                        </span>
+                    </div>
+                </div>
+                <!-- Active/Verified Dot -->
+                <span class="absolute bottom-1.5 right-1.5 w-4 h-4 bg-royal-600 border-2 border-white rounded-full" title="Connected"></span>
+            </div>
+
+            <!-- Name & Academic Program -->
+            <h1 class="font-display font-extrabold text-2xl sm:text-[26px] text-royal-900 tracking-tight leading-snug">
+                Justine Claire Francia
+            </h1>
+            <div class="inline-flex items-center gap-1.5 mt-1.5 px-3 py-0.5 rounded-full bg-lavender-100 border border-lavender-200/80">
+                <span class="w-1.5 h-1.5 rounded-full bg-royal-600"></span>
+                <p class="text-xs font-semibold tracking-wide text-royal-700">
+                    4th Year BS Accountancy 
+                </p>
+            </div>
+
+            <!-- Clean Bio / Motto -->
+            <p class="text-sm font-medium text-slate-600 italic leading-relaxed mt-3 max-w-xs mx-auto">
+                Araw araw sipag lang
+            </p>
+
+            <!-- Primary CTA: Save Contact (vCard) & Copy Profile Link -->
+            <div class="mt-5 flex items-center gap-2.5">
+                <button 
+                    id="saveContactBtn"
+                    onclick="downloadVCard()"
+                    class="flex-1 bg-gradient-to-r from-royal-700 to-royal-600 hover:from-royal-800 hover:to-royal-700 active:scale-[0.98] text-white font-semibold text-sm py-3.5 px-5 rounded-2xl shadow-md shadow-royal-600/25 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
+                >
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <line x1="19" y1="8" x2="19" y2="14"/>
+                        <line x1="22" y1="11" x2="16" y2="11"/>
+                    </svg>
+                    <span>Save Contact</span>
+                </button>
+
+                <!-- Quick Copy Link Button -->
+                <button 
+                    onclick="copyProfileLink()"
+                    aria-label="Copy profile link"
+                    title="Copy link"
+                    class="p-3.5 rounded-2xl bg-lavender-100 hover:bg-lavender-200 active:scale-[0.97] text-royal-700 border border-lavender-200 transition-all duration-200 cursor-pointer"
+                >
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Toast Notification Box (Replaces alert) -->
+            <div id="toastMessage" class="hidden mt-3 py-2 px-3 rounded-xl bg-lavender-100 border border-lavender-300 text-royal-800 text-xs font-medium transition-all duration-300">
+                Contact card downloaded!
+            </div>
+
+            <!-- Interactive In-Page Music Widget ("Far Away" by Arthur Nery) -->
+            <div class="mt-5 rounded-2xl bg-gradient-to-r from-lavender-50 via-white to-lavender-100/80 border border-lavender-200 hover:border-royal-600/40 shadow-sm transition-all duration-300 overflow-hidden">
+                <!-- Clickable Song Header Card -->
+                <button 
+                    type="button"
+                    id="musicToggleBtn"
+                    onclick="toggleMusicPlayer()"
+                    aria-expanded="false"
+                    class="w-full text-left p-3.5 flex items-center justify-between gap-3 group cursor-pointer focus:outline-none"
+                >
+                    <div class="flex items-center gap-3 min-w-0">
+                        <!-- Play / Pause Disc Icon -->
+                        <div id="musicDiscIcon" class="w-10 h-10 rounded-xl bg-gradient-to-br from-royal-700 to-lavender-500 text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+                            <svg id="playIconSvg" class="w-5 h-5 translate-x-0.5" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="6 4 20 12 6 20 6 4"/>
+                            </svg>
+                            <svg id="pauseIconSvg" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="6" y="4" width="4" height="16" rx="1"/>
+                                <rect x="14" y="4" width="4" height="16" rx="1"/>
+                            </svg>
+                        </div>
+                        <div class="min-w-0">
+                            <div class="flex items-center gap-1.5">
+                                <span id="musicStatusLabel" class="text-[10px] font-bold uppercase tracking-wider text-royal-600">Tap to Play</span>
+                                <!-- Animated Equalizer Bars (Active when playing) -->
+                                <div id="eqBarsContainer" class="flex items-end gap-0.5 h-3.5 opacity-40 transition-opacity">
+                                    <span class="w-0.5 h-1.5 bg-royal-600 rounded-full"></span>
+                                    <span class="w-0.5 h-2.5 bg-lavender-500 rounded-full"></span>
+                                    <span class="w-0.5 h-1.5 bg-royal-600 rounded-full"></span>
+                                </div>
+                            </div>
+                            <div class="font-display font-bold text-sm text-royal-900 truncate">Far Away</div>
+                            <div class="text-xs text-slate-500 truncate">Arthur Nery</div>
+                        </div>
+                    </div>
+                    <!-- Clean Action Pill -->
+                    <span id="musicActionPill" class="shrink-0 text-[11px] font-semibold text-royal-700 bg-lavender-100 group-hover:bg-royal-600 group-hover:text-white px-3.5 py-1.5 rounded-xl transition-colors">
+                        Play
+                    </span>
+                </button>
+
+                <!-- Expandable In-Page Player Container (Plays right inside the card) -->
+                <div id="inPagePlayerDrawer" class="hidden px-3.5 pb-3.5 pt-2 border-t border-lavender-200/70 bg-white/80">
+                    <!-- Option A: Native HTML5 Audio Player (if far-away.mp3 is placed next to index.html) -->
+                    <div id="localAudioWrapper" class="hidden space-y-2 py-1">
+                        <audio id="localAudioElement" preload="none" src="far-away.mp3"></audio>
+                        <div class="flex items-center gap-2.5">
+                            <span id="audioCurrentTime" class="text-[10px] font-mono text-slate-500 w-8">0:00</span>
+                            <input 
+                                type="range" 
+                                id="audioProgressBar" 
+                                value="0" 
+                                min="0" 
+                                max="100" 
+                                oninput="seekLocalAudio(this.value)"
+                                class="flex-1 h-1.5 bg-lavender-200 rounded-lg appearance-none cursor-pointer accent-royal-600"
+                            >
+                            <span id="audioDurationTime" class="text-[10px] font-mono text-slate-500 w-8 text-right">0:00</span>
+                        </div>
+                    </div>
+
+                    <!-- Option B: Official Video Embed for "Far Away" by Arthur Nery -->
+                    <div id="embedPlayerWrapper" class="rounded-xl overflow-hidden border border-lavender-200">
+                        <iframe 
+                            id="inPageMusicIframe"
+                            class="w-full h-44 rounded-xl"
+                            src=""
+                            title="Arthur Nery - Far Away (Official Text Performance Film)"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="my-5 flex items-center gap-3">
+                <div class="h-px flex-1 bg-lavender-200/80"></div>
+                <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Socials & Direct</span>
+                <div class="h-px flex-1 bg-lavender-200/80"></div>
+            </div>
+
+            <!-- Social Links Stack -->
+            <div class="space-y-3 text-left">
+                
+                <!-- Facebook (Plain Solid "f" Logo) -->
+                <a href="https://www.facebook.com/klarahriii" target="_blank" rel="noopener noreferrer" 
+                   class="group flex items-center justify-between p-3.5 rounded-2xl bg-white hover:bg-lavender-50 border border-lavender-200/90 hover:border-royal-600/40 shadow-sm transition-all duration-200 active:scale-[0.99]">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-lavender-100 group-hover:bg-royal-600 text-royal-700 group-hover:text-white flex items-center justify-center transition-colors duration-200">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M13.5 21v-8.25h2.75l.41-3.25H13.5V7.42c0-.94.26-1.58 1.61-1.58h1.72V2.93c-.3-.04-1.32-.13-2.51-.13-2.48 0-4.18 1.51-4.18 4.29v2.41H7.33v3.25h2.81V21h3.36z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-sm text-slate-800 group-hover:text-royal-900">Facebook</div>
+                            <div class="text-xs text-slate-400">@klarahriii</div>
+                        </div>
+                    </div>
+                    <svg class="w-4 h-4 text-slate-400 group-hover:text-royal-600 group-hover:translate-x-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/claaaaair_?fqnt=MXR6c2ptd3NmczRjbA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" 
+                   class="group flex items-center justify-between p-3.5 rounded-2xl bg-white hover:bg-lavender-50 border border-lavender-200/90 hover:border-royal-600/40 shadow-sm transition-all duration-200 active:scale-[0.99]">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-lavender-100 group-hover:bg-royal-600 text-royal-700 group-hover:text-white flex items-center justify-center transition-colors duration-200">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-sm text-slate-800 group-hover:text-royal-900">Instagram</div>
+                            <div class="text-xs text-slate-400">@claaaaair_</div>
+                        </div>
+                    </div>
+                    <svg class="w-4 h-4 text-slate-400 group-hover:text-royal-600 group-hover:translate-x-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@klrhr?_r=1&_t=ZS-9BfwRa5u8sG" target="_blank" rel="noopener noreferrer" 
+                   class="group flex items-center justify-between p-3.5 rounded-2xl bg-white hover:bg-lavender-50 border border-lavender-200/90 hover:border-royal-600/40 shadow-sm transition-all duration-200 active:scale-[0.99]">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-lavender-100 group-hover:bg-royal-600 text-royal-700 group-hover:text-white flex items-center justify-center transition-colors duration-200">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-sm text-slate-800 group-hover:text-royal-900">TikTok</div>
+                            <div class="text-xs text-slate-400">@klrhr</div>
+                        </div>
+                    </div>
+                    <svg class="w-4 h-4 text-slate-400 group-hover:text-royal-600 group-hover:translate-x-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </a>
+
+            </div>
+
+            <!-- Clean Two-Column Contact Tiles (Private: hides raw email & number on screen) -->
+            <div class="mt-3.5 grid grid-cols-2 gap-3">
+                <!-- Email Me Tile -->
+                <a href="mailto:franciajustineclaire@gmail.com" 
+                   class="group flex flex-col items-center justify-center p-4 rounded-2xl bg-lavender-50/70 hover:bg-lavender-100/80 border border-lavender-200/90 hover:border-royal-600/40 transition-all duration-200 active:scale-[0.98]">
+                    <div class="w-10 h-10 rounded-xl bg-white text-royal-700 shadow-sm flex items-center justify-center mb-2.5 group-hover:bg-royal-600 group-hover:text-white transition-colors duration-200">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"/>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                        </svg>
+                    </div>
+                    <span class="font-display font-bold text-sm text-royal-900">Email Me</span>
+                </a>
+
+                <!-- Call / Text Tile -->
+                <a href="tel:+639708617082" 
+                   class="group flex flex-col items-center justify-center p-4 rounded-2xl bg-lavender-50/70 hover:bg-lavender-100/80 border border-lavender-200/90 hover:border-royal-600/40 transition-all duration-200 active:scale-[0.98]">
+                    <div class="w-10 h-10 rounded-xl bg-white text-royal-700 shadow-sm flex items-center justify-center mb-2.5 group-hover:bg-royal-600 group-hover:text-white transition-colors duration-200">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <span class="font-display font-bold text-sm text-royal-900">Call / Text</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Subtle NFC Footer -->
+    <footer class="mt-6 text-center relative z-10">
+        <p class="text-[11px] font-medium text-royal-800/60 tracking-wide flex items-center justify-center gap-1.5">
+            <span>pogi ng gumawa :p</span>
+
+
+        </p>
+    </footer>
+
+    <!-- Minimal Vanilla JS for vCard Generation & Interactive Polish -->
+    <script>
+        /**
+         * Justine Claire Francia's pre-configured contact details.
+         */
+        const CONTACT_INFO = {
+            firstName: "Justine Claire",
+            lastName: "Francia",
+            fullName: "Justine Claire Francia",
+            title: "4th Year BS Accountancy",
+            phone: "+639708617082",
+            email: "franciajustineclaire@gmail.com",
+            facebook: "https://www.facebook.com/klarahriii",
+            instagram: "https://www.instagram.com/claaaaair_?fqnt=MXR6c2ptd3NmczRjbA%3D%3D&utm_source=qr",
+            tiktok: "https://www.tiktok.com/@klrhr?_r=1&_t=ZS-9BfwRa5u8sG",
+            note: "Araw araw sipag lang - 4th Year BSA"
+        };
+
+        /**
+         * Displays a subtle status message inside the card instead of using alert().
+         */
+        function showToast(message) {
+            const toast = document.getElementById('toastMessage');
+            toast.textContent = message;
+            toast.classList.remove('hidden');
+            
+            clearTimeout(window.toastTimeout);
+            window.toastTimeout = setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3200);
+        }
+
+        /**
+         * Dynamically builds a standard vCard (.vcf) file and triggers a download
+         * so phones immediately prompt "Add to Contacts".
+         */
+        function downloadVCard() {
+            try {
+                const vcardLines = [
+                    "BEGIN:VCARD",
+                    "VERSION:3.0",
+                    `N:${CONTACT_INFO.lastName};${CONTACT_INFO.firstName};;;`,
+                    `FN:${CONTACT_INFO.fullName}`,
+                    `TITLE:${CONTACT_INFO.title}`,
+                    `TEL;TYPE=CELL,VOICE:${CONTACT_INFO.phone}`,
+                    `EMAIL;TYPE=PREF,INTERNET:${CONTACT_INFO.email}`,
+                    `URL;TYPE=Facebook:${CONTACT_INFO.facebook}`,
+                    `URL;TYPE=Instagram:${CONTACT_INFO.instagram}`,
+                    `URL;TYPE=TikTok:${CONTACT_INFO.tiktok}`,
+                    `NOTE:${CONTACT_INFO.note}`,
+                    "END:VCARD"
+                ];
+
+                const vcardBlob = new Blob([vcardLines.join("\r\n")], { type: "text/vcard;charset=utf-8" });
+                const blobUrl = URL.createObjectURL(vcardBlob);
+
+                const tempLink = document.createElement("a");
+                tempLink.href = blobUrl;
+                tempLink.setAttribute("download", "Justine_Claire_Francia.vcf");
+                document.body.appendChild(tempLink);
+                tempLink.click();
+                document.body.removeChild(tempLink);
+
+                setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+                showToast("Contact card ready! Open to save to contacts.");
+            } catch (error) {
+                console.error("vCard generation error:", error);
+                showToast("Could not generate contact file. Please try again.");
+            }
+        }
+
+        /**
+         * Helper to copy text to clipboard with a custom toast.
+         */
+        function copyText(text, successMsg) {
+            try {
+                const tempInput = document.createElement("textarea");
+                tempInput.value = text;
+                tempInput.style.position = "fixed";
+                tempInput.style.opacity = "0";
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
+                showToast(successMsg);
+            } catch (err) {
+                console.error("Copy failed:", err);
+                showToast("Unable to copy automatically.");
+            }
+        }
+
+        /**
+         * Copies the current page URL to the clipboard.
+         */
+        function copyProfileLink() {
+            copyText(window.location.href, "Profile link copied to clipboard!");
+        }
+
+        /**
+         * In-Page Music Player Logic for "Far Away" by Arthur Nery.
+         */
+        let isPlayerOpen = false;
+        let isPlaying = false;
+        let hasLocalMp3 = false;
+
+        // Check silently if far-away.mp3 exists in the same folder
+        (function checkLocalAudioFile() {
+            const audioEl = document.getElementById('localAudioElement');
+            if (!audioEl) return;
+
+            fetch('far-away.mp3', { method: 'HEAD' })
+                .then(res => {
+                    if (res.ok) {
+                        hasLocalMp3 = true;
+                        document.getElementById('localAudioWrapper').classList.remove('hidden');
+                        document.getElementById('embedPlayerWrapper').classList.add('hidden');
+                    }
+                })
+                .catch(() => {
+                    hasLocalMp3 = false;
+                });
+
+            audioEl.addEventListener('timeupdate', () => {
+                if (!audioEl.duration) return;
+                const pct = (audioEl.currentTime / audioEl.duration) * 100;
+                document.getElementById('audioProgressBar').value = pct;
+                document.getElementById('audioCurrentTime').textContent = formatSeconds(audioEl.currentTime);
+                document.getElementById('audioDurationTime').textContent = formatSeconds(audioEl.duration);
+            });
+
+            audioEl.addEventListener('ended', () => {
+                setPlayingVisualState(false);
+            });
+        })();
+
+        function formatSeconds(sec) {
+            const mins = Math.floor(sec / 60);
+            const secs = Math.floor(sec % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        function seekLocalAudio(percent) {
+            const audioEl = document.getElementById('localAudioElement');
+            if (audioEl && audioEl.duration) {
+                audioEl.currentTime = (percent / 100) * audioEl.duration;
+            }
+        }
+
+        function setPlayingVisualState(playing) {
+            isPlaying = playing;
+            const playSvg = document.getElementById('playIconSvg');
+            const pauseSvg = document.getElementById('pauseIconSvg');
+            const eqContainer = document.getElementById('eqBarsContainer');
+            const bars = eqContainer.querySelectorAll('span');
+            const statusLabel = document.getElementById('musicStatusLabel');
+            const actionPill = document.getElementById('musicActionPill');
+
+            if (playing) {
+                playSvg.classList.add('hidden');
+                pauseSvg.classList.remove('hidden');
+                eqContainer.classList.remove('opacity-40');
+                bars[0].classList.add('eq-bar-1');
+                bars[1].classList.add('eq-bar-2');
+                bars[2].classList.add('eq-bar-3');
+                statusLabel.textContent = "Now Playing";
+                actionPill.textContent = hasLocalMp3 ? "Pause" : "Hide";
+            } else {
+                playSvg.classList.remove('hidden');
+                pauseSvg.classList.add('hidden');
+                eqContainer.classList.add('opacity-40');
+                bars[0].classList.remove('eq-bar-1');
+                bars[1].classList.remove('eq-bar-2');
+                bars[2].classList.remove('eq-bar-3');
+                statusLabel.textContent = "Tap to Play";
+                actionPill.textContent = "Play";
+            }
+        }
+
+        function toggleMusicPlayer() {
+            const drawer = document.getElementById('inPagePlayerDrawer');
+            const toggleBtn = document.getElementById('musicToggleBtn');
+            const iframe = document.getElementById('inPageMusicIframe');
+            const audioEl = document.getElementById('localAudioElement');
+
+            if (hasLocalMp3) {
+                if (!isPlayerOpen) {
+                    drawer.classList.remove('hidden');
+                    isPlayerOpen = true;
+                    toggleBtn.setAttribute('aria-expanded', 'true');
+                }
+                if (audioEl.paused) {
+                    audioEl.play().then(() => setPlayingVisualState(true)).catch(() => {
+                        showToast("Tap play again to start audio.");
+                    });
+                } else {
+                    audioEl.pause();
+                    setPlayingVisualState(false);
+                }
+                return;
+            }
+
+            // Official In-Page Player for "Far Away" by Arthur Nery
+            if (!isPlayerOpen) {
+                drawer.classList.remove('hidden');
+                if (!iframe.src || iframe.src === window.location.href) {
+                    iframe.src = "https://www.youtube-nocookie.com/embed/0C7OHYIXZnU?autoplay=1";
+                }
+                isPlayerOpen = true;
+                toggleBtn.setAttribute('aria-expanded', 'true');
+                setPlayingVisualState(true);
+            } else {
+                drawer.classList.add('hidden');
+                iframe.src = "";
+                isPlayerOpen = false;
+                toggleBtn.setAttribute('aria-expanded', 'false');
+                setPlayingVisualState(false);
+            }
+        }
+    </script>
+</body>
+</html>
